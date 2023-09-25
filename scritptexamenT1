@@ -1,0 +1,25 @@
+-- Base de Datos : cibertec2023
+-- Autor : Nagib Said Haddad Gutierrez
+-- Fecha : 9-Setiembre-2023
+----------------------------------------
+
+CREATE DATABASE cibertec2023
+
+USE cibertec2023
+
+CREATE TABLE empleado (
+  IdEmpleado VARCHAR(7) NOT NULL PRIMARY KEY,
+  Apellidos VARCHAR(255) NOT NULL,
+  Nombres VARCHAR(255) NOT NULL,
+  Edad INT CHECK (Edad >= 18),
+  Sexo ENUM('M', 'F') NOT NULL,
+  Salario DECIMAL(10, 2) CHECK (Salario >= 1500 AND Salario <= 2500)
+);
+
+
+INSERT INTO empleado (IdEmpleado, Apellidos, Nombres, Edad, Sexo, Salario) VALUES
+('EMP0001', 'TORRES', 'JOSE', 22, 'M', 1500),
+('EMP0002', 'GARCIA', 'MARIA', 21, 'F', 1750),
+('EMP0003', 'FLORES', 'JUAN', 22, 'M', 1850),
+('EMP0004', 'CASAS', 'ANA', 23, 'F', 2000);
+
