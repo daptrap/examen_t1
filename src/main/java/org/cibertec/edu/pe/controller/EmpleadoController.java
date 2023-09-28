@@ -25,17 +25,16 @@ public class EmpleadoController {
 		return "index";
 	}
 	
-	// Agregar empleado - Mostrar el formulario
     @GetMapping("/nuevo")
     public String mostrarFormulario(Empleado empleado) {
-        return "nuevo"; // Debes tener una vista llamada "nuevo.html" para mostrar el formulario
+        return "nuevo"; 
     }
 
     // Guardar nuevo empleado
     @PostMapping("/guardar")
     public String guardarEmpleado(@ModelAttribute Empleado empleado) {
-        servicio.guardar(empleado); // Llama al método de servicio para guardar el empleado
-        return "redirect:/listar"; // Redirige a la lista de empleados después de guardar
+        servicio.guardar(empleado);
+        return "redirect:/listar"; 
     }
 
 }
